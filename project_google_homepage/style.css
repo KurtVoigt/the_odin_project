@@ -1,5 +1,6 @@
 :root{
     font-family: Arial, sans-serif;
+    
 }
 #top-links{
     display:flex;
@@ -27,18 +28,19 @@ a:hover{
 
 
 #logo{
-    padding-top: 109px;;
+    padding-top: 109px;
+
     display: grid;
-    grid-template-rows: 0%;
+    grid-template-rows: 1fr 1fr 1fr;
     margin: 0 auto;
     padding-top: 20vh;
     width: 584px;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     grid-template-areas: 
-    "1 image image 2"
+    ". image image ."
     "bar bar bar bar"
-    "5 button1 button2 6";
+    ". button1 button2 .";
 }
 .image{
     grid-area: image;
@@ -74,8 +76,12 @@ a:hover{
     justify-self: stretch;
     flex-grow: 1;
     font-size: 16px;
-    font-weight: 590;
+    font-weight: 540;
     margin-left: 15px;
+    border-color: transparent;
+}
+#actual-bar:focus{
+    outline: none;
 }
 
 
