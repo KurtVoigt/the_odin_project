@@ -1,0 +1,139 @@
+:root{
+    font-family: Arial, sans-serif;
+}
+#top-links{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    font-size: 14px;
+    
+}
+
+a{
+    text-decoration: none !important;
+    font-size: 15px;
+    opacity: .75;
+    color: #000;
+    padding-left: 14px;
+}
+
+a:hover{
+    text-decoration: underline !important;
+}
+
+
+
+#logo{
+    padding-top: 109px;;
+    display: grid;
+    grid-template-rows: 0%;
+    margin: 0 auto;
+    padding-top: 20vh;
+    width: 584px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    grid-template-areas: 
+    "1 image image 2"
+    "bar bar bar bar"
+    "5 button1 button2 6";
+}
+.image{
+    grid-area: image;
+    width: 272px;
+    height: 92px;
+}
+.bar{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:start;
+    align-items: center;
+    grid-area: bar;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    flex-wrap:nowrap;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    
+
+}
+.bar:hover{
+    box-shadow: 3px 3px 3px rgba(70, 69, 69, .2);
+}
+
+    
+
+#actual-bar{
+
+    background-color: white;    
+    height: 44px;
+    border: none;
+    border-radius: 24px;
+    justify-self: stretch;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 590;
+    margin-left: 15px;
+}
+
+
+.button1{
+    border-radius: 4px;
+    grid-area: button1;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+
+
+
+}
+
+.button1:hover{
+    box-shadow: 3px 3px 3px rgba(70, 69, 69, .2);
+}
+.button2{
+    border-radius: 4px;
+    grid-area: button2;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 100px;
+    white-space: nowrap;
+    
+}
+.button2:hover{
+    box-shadow: 3px 3px 3px rgba(70, 69, 69, .2);
+}
+
+.empty{
+    grid-area: empty;
+}
+
+#mag-glass{
+    width: 20px;
+    height: 20px;
+    background-image: url("./magnifying-glass.png");
+    background-color: white;
+    margin-left: 12px;
+    background-position: center;
+    cursor: pointer;
+    background-size: cover;
+    border: transparent;
+    opacity: 80%;
+    
+}
