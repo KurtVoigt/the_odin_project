@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <button>press for fizzbuzz</button>
+  <p></p>
+<script>
+    const button = document.querySelector("button");
+    button.onclick = function(){
+      let p = document.querySelector("p");
+      p.innerHTML = "";
+      let num = parseInt(prompt("Enter an integer"), 10);
+      for(let i =1; i <= num; i++){
+          if(i % 3 === 0 && i % 5 === 0){
+              console.log("fizzbuzz");
+              p.innerHTML = p.innerHTML + "fizzbuzz <br>";
+          }
+          else if(i %3 === 0){
+              console.log("fizz");
+              p.innerHTML = p.innerHTML + "fizz<br>";
+          }
+          else if(i % 5 === 0){
+              console.log("buzz");
+              p.innerHTML = p.innerHTML + "buzz<br>";
+          }
+          else{
+              console.log(i);
+              p.innerHTML = p.innerHTML + i.toString() + "<br>";
+          }
+      }
+    }
+  </script>
+</body>
+</html>
