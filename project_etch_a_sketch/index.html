@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Etch a Sketch</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<div id="headerDiv">
+    <h1>Etch a Sketch</h1>
+    <div id="buttonFlex">
+        <button id="reset">Clear</button>
+        <button id="rainbow">Rainbow Fill In</button>
+        <button id="resize">Rezise Grid</button>
+    </div>
+   
+</div>
+
+<div id="container">
+</div>
+<script>
+    var rainbowColors = false;
+    function draw(div){
+        if(!rainbowColors){
+            div.style.backgroundColor = "black";
+        }
+        else{
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            div.style.backgroundColor = "#" +  randomColor;
+        }
+    }
+
+    function reset(){
+        etchedDivs = document.querySelectorAll(".innerSquare");
+        
+        for(let i = 0; i < etchedDivs.length; i++){
+            etchedDivs[i].style.backgroundColor = "white";
+        }
+    }
+
+    function resize(){
+        newSize = parseInt(prompt("Please enter an integer up to 150 to make a new inputxinput box"));
+        
+        if(!isNaN(newSize) && newSize <=150){
+            document.querySelector("#container").innerHTML= "";
+            let speedString = ""
+            document.querySelector("#container").style.gridTemplateColumns = "repeat(" + newSize + ", 1fr)";
+            document.querySelector("#container").style.gridTemplateRows = "repeat(" + newSize + ", 1fr)";
+            for(let i=0; i < (newSize * newSize); i++){
+                speedString += "<div class='innerSquare' onmouseover='draw(this)'></div>";
+            }
+            document.querySelector("#container").innerHTML = speedString;
+        }
+        else{
+            alert("input was either not an integer or greater than 150");
+        }
+        return;
+
+    }
+
+    for(let i =0; i < 16; i++){
+        document.querySelector("#container").innerHTML += "<div class='innerSquare' onmouseover='draw(this)'></div>";
+    }
+
+    resetButton = document.querySelector("#reset");
+    resizeButton = document.querySelector("#resize");
+    rainbowButton = document.querySelector("#rainbow");
+    resetButton.onclick = function(){
+        reset();
+    };
+    resizeButton.onclick = function(){
+        resize();
+    }
+    rainbowButton.onclick = function(){
+        if(!rainbowColors){
+            rainbowColors = true;
+        }
+        else{
+            rainbowColors = false;
+        }
+        return
+    }
+</script>
+</html>
